@@ -311,7 +311,9 @@ The application then compares the query embedding with the stored product embedd
 
 ## Screenshots
 
-Screenshots of the running application will be added here.
+### Semantic Product Search Interface
+
+![Semantic Product Search](screenshots/product-search.png)
 
 ---
 
