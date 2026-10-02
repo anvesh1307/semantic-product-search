@@ -1,8 +1,8 @@
-# 🔎 Semantic Product Search Engine
+# Semantic Product Search Engine
 
 A semantic product search engine that uses **sentence embeddings** and **ChromaDB** to find products based on the meaning of a user's search query rather than relying only on exact keyword matching.
 
-## 📌 Overview
+## Overview
 
 Traditional product search often depends on matching the exact words entered by a user with words contained in product descriptions.
 
@@ -20,20 +20,20 @@ The application provides an interactive search interface using **Gradio**.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🔎 Semantic product search using embeddings
-- 🧠 Sentence Transformer model for text embeddings
-- 🗄️ Persistent ChromaDB vector database
-- 📐 Cosine-based similarity search
-- 📊 Similarity scores for retrieved products
-- 🖥️ Interactive Gradio web interface
-- 🐳 Docker support
-- ⚡ Embeddings are generated only when the ChromaDB collection is empty
+- Semantic product search using embeddings
+- Sentence Transformer model for text embeddings
+- Persistent ChromaDB vector database
+- Cosine-based similarity search
+- Similarity scores for retrieved products
+- Interactive Gradio web interface
+- Docker support
+- Embeddings are generated only when the ChromaDB collection is empty
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 The application follows this pipeline:
 
@@ -87,7 +87,7 @@ Product Category + Description
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Technology | Purpose |
 |---|---|
@@ -103,17 +103,17 @@ Product Category + Description
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 This project uses the **Online Shopping Dataset** by **Jackson Divakar R**, sourced from Kaggle.
 
 The dataset contains online shopping transaction and product information.
 
-For the semantic search component, the project primarily uses:
+For the semantic search component, the project uses:
 
-- `Product_SKU`
-- `Product_Category`
-- `Product_Description`
+- `Product_SKU` for product-level preprocessing and deduplication
+- `Product_Category` for semantic search text
+- `Product_Description` for semantic search text
 
 The product category and description are combined to create the text used for embedding generation.
 
@@ -123,10 +123,13 @@ During experimentation, the dataset contained approximately **52,955 records**, 
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```text
-Project3/
+semantic-product-search/
+│
+├── notebooks/
+│   └── product_search_experiments.ipynb
 │
 ├── first.py
 ├── prod.csv
@@ -135,9 +138,8 @@ Project3/
 ├── .dockerignore
 ├── .gitignore
 ├── .env.example
-├── README.md
-│
-└── test.ipynb
+├── DATASET_LICENSE.md
+└── README.md
 ```
 
 ### Generated / Local Files
@@ -145,9 +147,9 @@ Project3/
 The following files and folders are intentionally excluded from version control:
 
 ```text
+.env
 chroma_db/
 .gradio/
-.env
 __pycache__/
 ```
 
@@ -155,13 +157,13 @@ __pycache__/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
-cd Project3
+git clone https://github.com/anvesh1307/semantic-product-search.git
+cd semantic-product-search
 ```
 
 ### 2. Create a virtual environment
@@ -192,7 +194,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the Application
+## Running the Application
 
 Run:
 
@@ -231,7 +233,7 @@ This reduces unnecessary embedding generation during subsequent application laun
 
 ---
 
-## 🐳 Running with Docker
+## Running with Docker
 
 The project includes a `Dockerfile` for containerized execution.
 
@@ -255,7 +257,7 @@ http://localhost:7860
 
 ---
 
-## 🔍 Example
+## Example
 
 Example query:
 
@@ -269,7 +271,7 @@ The interface returns the closest matching products along with their similarity 
 
 ---
 
-## 💾 Why ChromaDB?
+## Why ChromaDB?
 
 Instead of calculating similarity between a new query and every product manually, the project uses ChromaDB as a vector database.
 
@@ -285,7 +287,7 @@ The generated database is intentionally excluded from Git because it can be recr
 
 ---
 
-## 🧠 Embeddings
+## Embeddings
 
 An embedding is a numerical representation of text that captures aspects of its meaning.
 
@@ -307,19 +309,13 @@ The application then compares the query embedding with the stored product embedd
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-Screenshots of the running application can be added here.
-
-Example:
-
-```markdown
-![Product Search Engine](screenshots/product-search.png)
-```
+Screenshots of the running application will be added here.
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 Potential improvements include:
 
@@ -336,7 +332,7 @@ Potential improvements include:
 
 ---
 
-## 📚 Learning Outcomes
+## Learning Outcomes
 
 This project helped me gain practical experience with:
 
@@ -353,17 +349,20 @@ This project helped me gain practical experience with:
 
 ---
 
-## 📄 Dataset Attribution
+## Dataset Attribution
 
 **Dataset:** Online Shopping Dataset  
 **Author:** Jackson Divakar R  
-**Source:** Kaggle
+**Source:** Kaggle  
+**License:** Apache License 2.0
 
 The dataset is used as the product catalog for demonstrating semantic product search.
 
+See [DATASET_LICENSE.md](DATASET_LICENSE.md) for the dataset license and attribution information.
+
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Anvesh Prasade**
 
